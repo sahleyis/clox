@@ -1,9 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -std=c99 -g
+CFLAGS = -Wall -Wextra -Werror -std=c99 -g -Isrc/headers # to remove treat warnings as errors remove -Werror
 TARGET = build/clox
 
 # Automatically find all .c files in the src directory
 SRCS = $(wildcard src/*.c)
+HEADERS = $(wildcard src/headers/*.h)
 OBJS = $(SRCS:src/%.c=build/%.o)
 
 all: $(TARGET)

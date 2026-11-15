@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "common.h"
+#include "headers/common.h"
 
 
 int main(int argc, const char* argv[]) {
     (void)argc;
     (void)argv;
-    printf("clox\n");
+    printf("Hello");
     return 0;
 }

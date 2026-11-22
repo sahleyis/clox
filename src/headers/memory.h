@@ -9,9 +9,13 @@
  ((capacity) < 8 ? 8 : (capacity) * 2)
 
 // grows an array and reallocates the memory using the reallocate function
-#define GROW_ARRAY(type, pointer, oldCount, newCount) \ 
+#define GROW_ARRAY(type, pointer, oldCount, newCount) \
 (type*)reallocate(pointer, sizeof(type) * (oldCount), \
 sizeof(type) * (newCount))
+
+// frees memory by passing in zero for the new size
+#define FREE_ARRAY(type, pointer, oldCount) \
+reallocate(pointer, sizeof(type) * (oldCount), 0);
 
 // declaration for the reallocate function
 void* reallocate(void* pointer, size_t oldSize, size_t newSize);
